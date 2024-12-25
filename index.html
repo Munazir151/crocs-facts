@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        h1 {
+            color: #2e8b57;
+        }
+
+        .fact {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #2e8b57;
+            border-radius: 5px;
+            background-color: #e0f7fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <div id="facts-container"></div>
+        <button id="generate-fact">Generate Random Fact</button>
+    </div>
+    <script>
+        const crocodileFacts = [
+            {
+                "fact": "Ancient Creatures",
+                "description": "Crocodiles have been around for over 200 million years, making them one of the oldest living species on Earth."
+            },
+            {
+                "fact": "Cold-Blooded Predators",
+                "description": "As cold-blooded reptiles, crocodiles rely on external temperatures to regulate their body heat, often basking in the sun to warm up."
+            },
+            {
+                "fact": "Powerful Bite",
+                "description": "Crocodiles have one of the strongest bites in the animal kingdom, with a bite force that can exceed 3,700 pounds per square inch (psi)."
+            },
+            {
+                "fact": "Unique Communication",
+                "description": "Crocodiles communicate using a variety of sounds, including growls, hisses, and even bellows, especially during mating season."
+            },
+            {
+                "fact": "Excellent Swimmers",
+                "description": "With their streamlined bodies and powerful tails, crocodiles can swim at speeds of up to 20 miles per hour (32 km/h) in short bursts."
+            },
+            {
+                "fact": "Long Lifespan",
+                "description": "Crocodiles can live for several decades, with some species known to live over 70 years in the wild."
+            },
+            {
+                "fact": "Nesting Behavior",
+                "description": "Female crocodiles build nests out of vegetation and lay between 20 to 80 eggs, depending on the species. They often guard their nests fiercely."
+            },
+            {
+                "fact": "Color Change",
+                "description": "Crocodiles can change color slightly based on their environment and mood, helping them to camouflage better in their surroundings."
+            },
+            {
+                "fact": "Dietary Habits",
+                "description": "While they are primarily carnivorous, crocodiles can also consume fruits and vegetation, especially when food is scarce."
+            },
+            {
+                "fact": "Social Structure",
+                "description": "Contrary to popular belief, crocodiles can exhibit social behaviors and often form hierarchies within their groups, especially in areas with abundant food resources."
+            }
+        ];
+
+        document.getElementById('generate-fact').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * crocodileFacts.length);
+            const fact = crocodileFacts[randomIndex];
+            displayFact(fact);
+        });
+
+        function displayFact(fact) {
+            const factsContainer = document.getElementById('facts-container');
+            factsContainer.innerHTML = `<div class="fact"><strong>${fact.fact}</strong>: ${fact.description}</div>`;
+        }
+    </script>
+</body>
+</html>
